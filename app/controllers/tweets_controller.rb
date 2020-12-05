@@ -10,10 +10,6 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
   end
 
-
-  
-
-
   def create
     binding.pry
     Tweet.create(tweet_params)
