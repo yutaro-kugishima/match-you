@@ -1093,6 +1093,8 @@ footer p {
   width: 10%;
 }
 
-#weight-bold-text {
+.tweet-picture {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
