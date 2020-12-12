@@ -1,6 +1,6 @@
- <%= form_with(model: tweet, local: true) do |form| %>
-      <%= form.file_field :picture, id:"user-picture" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
-      <%= form.submit "SEND" %>
-    <% end %>
+<%= form_with(model: tweet, local: true) do |form| %>
+ <%= form.file_field :picture, id:"user-picture" %>
+ <%= form.text_field :image, placeholder: "background image" %>
+ <%= form.text_area :text, placeholder: "profile", rows: "10" %>
+ <%= form.submit "SEND" %>
+<% end %>
