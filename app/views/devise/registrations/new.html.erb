@@ -5,7 +5,7 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximun)</em><br />
+        <%= f.label :nickname %> <em>(6文字以下)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
       </div>
       <div class="field">
@@ -16,7 +16,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> 文字以上）</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
@@ -24,6 +24,41 @@
       <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :birth_place（出身地） %><br />
+        <%= f.text_field :birth_place, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :residence（住所） %><br />
+        <%= f.text_field :residence, autocomplete: "off" %>
+      </div>
+      <div class="field">
+        <%= f.label :blood_type（血液型） %><br />
+        <%= f.text_field :blood_type, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :birth_date（誕生日） %><br />
+        <%= f.text_field :birth_date, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :age（年齢） %><br />
+        <%= f.text_field :age, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :profession（職業） %><br />
+        <%= f.text_field :profession, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+
+        <%= f.label :hobby（趣味） %><br />
+        <%= f.text_field :hobby, autocomplete: "off" %>
       </div>
 
       <div class="actions">
