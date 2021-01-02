@@ -25,9 +25,10 @@ class UsersController < ApplicationController
     user.destroy
   end
 
-  def search
-    @users = User.search(params[:keyword])
-  end
+  # def search
+  #   # @users = User.search(params[:keyword])
+  #   @users = User.search(params[:user_id])
+  # end
 
   private
 
