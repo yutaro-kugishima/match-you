@@ -1,5 +1,6 @@
  <div class="content_post" style="background-image: url(<%= tweet.image %>);">
       <div class="more">
+        <%= image_tag tweet.picture, class: 'tweet-picture' if tweet.picture.attached? %>
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
           <li>

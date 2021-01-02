@@ -40,6 +40,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
 end
 
 group :test do
@@ -54,9 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
-<<<<<<< Updated upstream
-gem 'devise'
-=======
+
 gem 'devise'
 
 group :production do
@@ -65,9 +64,9 @@ end
 
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
 gem "aws-sdk-s3", require: false
 
 gem 'active_hash'
 
 gem 'ransack'
->>>>>>> Stashed changes

@@ -4,8 +4,19 @@
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
 
+      <div class="pic-upload">
+        <div class="weight-bold-text">
+          プロフィール画像
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :picture, id:"user-picture" %>
+      </div>
+
       <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximun)</em><br />
+        <%= f.label :nickname %> <em>(6文字以下)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
       </div>
       <div class="field">
@@ -16,7 +27,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> 文字以上）</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
@@ -24,6 +35,73 @@
       <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :gender（性別） %><br />
+        <%= f.text_field :gender, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :birth_place（出身地） %><br />
+        <%= f.text_field :birth_place, autocomplete: "off" %>
+            <%# <%= f.collection_select(:birth_place, BirthPlace.all, :id, :name, {}, {class:"birth_place-select"}) %> 
+      </div>
+
+      <div class="field">
+        <%= f.label :residence（住所） %><br />
+        <%= f.text_field :residence, autocomplete: "off" %>
+      </div>
+      <div class="field">
+        <%= f.label :blood_type（血液型） %><br />
+        <%= f.text_field :blood_type, autocomplete: "off" %>
+      </div>
+
+      <%# <div class="field">
+        <%= f.label :birth_date（生年月日） %>
+        <%# <%= f.text_field :birth_date, autocomplete: "off" %>
+      <%# </div> %>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">生年月日</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-birth-wrap'>
+          <%= raw sprintf(
+                      f.date_select(
+                        :birth_date,
+                        class:'select-birth',
+                        id:"birth-date",
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: 1930,
+                        end_year: (Time.now.year - 5),
+                        date_separator: '%s'),
+                      "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :age（年齢） %><br />
+        <%# <%= f.text_field :age, autocomplete: "off" %>
+        <%= f.number_field :age, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :profession（職業） %><br />
+        <%= f.text_field :profession, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :hobby（趣味） %><br />
+        <%= f.text_field :hobby, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :text（自己紹介） %><br />
+        <%# <%= f.text_field :text, autocomplete: "off" %>
+        <%= f.text_area :text, rows: "2" %>
       </div>
 
       <div class="actions">

@@ -1,6 +1,61 @@
+<%# <div class="contents row">
+  <p><%= @nicknameさんの投稿一覧 %>
+  <%# <% @user.each do |user| %>
+    <%# <%= render partial: "users/user", locals: { user: user } %>
+  <%# <% end %>
+<%# </div> %>
+
 <div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <% @tweets.each do |tweet| %>
-    <%= render partial: "tweets/tweet", locals: { tweet: tweet } %>
-  <% end %>
+  <%# <div class="content_post" style="background-image: url(<%= @tweet.image %>
+    <%= image_tag @user.picture, class: 'user-picture' if @user.picture.attached? %>
+    <% if user_signed_in? && current_user == @user %>
+      <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', edit_user_path(@user.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', user_path(@user.id), method: :delete %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+    <span class="name">
+      <a href="/users/<%= @user.id %>">
+        <p><%= @user.nickname %></p>
+        <p><%= @user.gender %></p>
+        <p><%= @user.birth_place %></p>
+        <p><%= @user.residence %></p>
+        <p><%= @user.blood_type %></p>
+        <p><%= @user.birth_date %></p>
+        <p><%= @user.age %></p>
+        <p><%= @user.profession %></p>
+        <p><%= @user.hobby %></p>
+        <p><%= @user.text %></p>
+      </a>
+    </span>
+  </div>
+  <%# <div class="container">
+    <% if user_signed_in? %>
+      <%# <%= form_with(model: [@tweet, @comment], local: true) do |form| %> 
+        <%# <%= form.text_area :text, placeholder: "コメントする", rows: "2" %> 
+        <%# <%= form.submit "SEND" %> 
+      <%# <% end %
+    <%# <% else %>
+      <%# <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p> %>
+      <%# </strong> %>
+    <%# <% end %>
+    <%# <div class="comments"> %>
+      <%# <h4>＜コメント一覧＞</h4> %>
+      <%# <% if @comments %>
+        <%# <% @comments.each do |comment| %>
+          <%# <p> %>
+            <%# <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}"：</strong> %>
+            <%# <%= comment.text 
+          <%# </p> %>
+        <%# <% end %>
+      <%# <% end %>
+    <%# </div> %>
+  <%# </div> %>
 </div>

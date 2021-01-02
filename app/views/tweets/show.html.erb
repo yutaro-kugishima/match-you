@@ -1,5 +1,6 @@
 <div class="contents row">
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
+    <%= image_tag @tweet.picture, class: 'tweet-picture' if @tweet.picture.attached? %>
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
       <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>
@@ -14,6 +15,7 @@
       </div>
     <% end %>
     <p><%= @tweet.text %></p>
+        <p><%= @tweet.user.birth_place %></p>
     <span class="name">
       <a href="/users/<%= @tweet.user.id %>">
         <span>投稿者</span><%= @tweet.user.nickname %>
