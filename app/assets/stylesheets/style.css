@@ -855,6 +855,12 @@ header.header .user_nav ul li a {
   right: 0;
 }
 
+/* .contents.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+
 div.contents.row h2 {
   margin: 20px 0;
   padding: 0;
@@ -871,7 +877,13 @@ div.contents.row .new_user {
   font-family: "游ゴシック", "YuGothic";
 }
 
+div.contents.row div.more ul.more_item {
+  display: flex;
+}
+
 div.contents.row div.content_post {
+  display: flex;
+
   margin: 20px 0;
   padding: 30px;
   position: relative;
@@ -884,6 +896,7 @@ div.contents.row div.content_post {
 }
 
 div.contents.row div.content_post:after {
+  display: flex;
   content: "";
   position: absolute;
   top: 0;
@@ -936,10 +949,12 @@ div.contents.row div.content_post .more {
 }
 
 div.contents.row div.content_post .more:hover ul.more_list {
+  /* div.contents.row div.more:hover ul.more_list { */
   display: block;
 }
 
 div.contents.row div.content_post .more ul.more_list {
+  /* div.contents.row div.more ul.more_list { */
   position: absolute;
   text-align: left;
   width: 80px;
@@ -952,20 +967,24 @@ div.contents.row div.content_post .more ul.more_list {
   border-radius: 3px;
 }
 
-div.contents.row div.content_post .more ul.more_list li {
+/* div.contents.row div.content_post .more ul.more_list li { */
+div.contents.row div.more ul.more_list li {
   border-bottom: 1px solid #ddd;
 }
 
-div.contents.row div.content_post .more ul.more_list li:last-child {
+/* div.contents.row div.content_post .more ul.more_list li:last-child { */
+div.contents.row div.more ul.more_list li:last-child {
   border-bottom: 0;
 }
 
-div.contents.row div.content_post .more ul.more_list li a {
+/* div.contents.row div.content_post .more ul.more_list li a { */
+div.contents.row div .more ul.more_list li a {
   display: block;
   padding: 5px;
 }
 
-div.contents.row div.content_post .more ul.more_list li a:hover {
+/* div.contents.row div.content_post .more ul.more_list li a:hover { */
+div.contents.row div.more ul.more_list li a:hover {
   background-color: #57c3e9;
   color: #fff;
 }
@@ -1080,7 +1099,7 @@ footer p {
 }
 
 .search-form {
-  text-align: center;
+  text-align: left;
   padding-top: 32px;
 }
 
@@ -1090,10 +1109,10 @@ footer p {
 }
 
 .search-form .search-btn {
-  width: 10%;
+  width: 5%;
 }
 
-.tweet-picture {
+.user-picture {
   width: 80px;
   height: 80px;
   border-radius: 50%;

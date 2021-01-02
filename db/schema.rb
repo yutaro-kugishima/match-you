@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_12_11_063452) do
     t.string "profession"
     t.string "hobby"
     t.string "nickname"
+    t.string "text"
+    t.string "gender"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
