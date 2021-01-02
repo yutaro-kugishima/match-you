@@ -54,4 +54,20 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
+<<<<<<< Updated upstream
 gem 'devise'
+=======
+gem 'devise'
+
+group :production do
+  gem 'rails_12factor'
+end
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem "aws-sdk-s3", require: false
+
+gem 'active_hash'
+
+gem 'ransack'
+>>>>>>> Stashed changes
