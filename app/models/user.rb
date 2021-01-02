@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :comments
   has_one_attached :picture
+  belongs_to :category
   # has_one :birth_place
 
   # def self.search(search)
