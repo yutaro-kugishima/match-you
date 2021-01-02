@@ -16,7 +16,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :nickname
       t.string :text
       t.string :gender
-      t.references :category, foreign_key: true
 
       ## Recoverable
       t.string   :reset_password_token
