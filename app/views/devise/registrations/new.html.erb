@@ -39,33 +39,28 @@
 
       <div class="field">
         <%= f.label :gender（性別） %><br />
-        <%= f.text_field :gender, autocomplete: "off" %>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"gender-select"}) %>        
       </div>
 
       <div class="field">
         <%= f.label :birth_place（出身地） %><br />
-        <%= f.text_field :birth_place, autocomplete: "off" %>
-            <%# <%= f.collection_select(:birth_place, BirthPlace.all, :id, :name, {}, {class:"birth_place-select"}) %> 
+        <%= f.collection_select(:birth_place_id, BirthPlace.all, :id, :name, {}, {class:"birth_place-select"}) %>
       </div>
 
       <div class="field">
-        <%= f.label :residence（住所） %><br />
-        <%= f.text_field :residence, autocomplete: "off" %>
+        <%= f.label :residence（居住地） %><br />
+        <%= f.collection_select(:residence_id, Residence.all, :id, :name, {}, {class:"residence-select"}) %>
       </div>
+
       <div class="field">
         <%= f.label :blood_type（血液型） %><br />
-        <%= f.text_field :blood_type, autocomplete: "off" %>
+        <%= f.collection_select(:blood_type_id, BloodType.all, :id, :name, {}, {class:"blood_type-select"}) %>
       </div>
-
-      <%# <div class="field">
-        <%= f.label :birth_date（生年月日） %>
-        <%# <%= f.text_field :birth_date, autocomplete: "off" %>
-      <%# </div> %>
 
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">生年月日</label>
-          <span class="indispensable">必須</span>
+          <%# <span class="indispensable">必須</span> %>
         </div>
         <div class='input-birth-wrap'>
           <%= raw sprintf(
