@@ -253,7 +253,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-
   active_hash
   aws-sdk-s3
 
@@ -272,7 +271,6 @@ DEPENDENCIES
 
   rails_12factor
   ransack
-
   sass-rails (~> 5)
   selenium-webdriver
   spring

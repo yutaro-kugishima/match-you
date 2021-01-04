@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 2021_01_02_100751) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
     t.text "image"
@@ -58,17 +64,16 @@ ActiveRecord::Schema.define(version: 2021_01_02_100751) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "birth_place"
-    t.string "residence"
-    t.string "blood_type"
+    t.integer "birth_place_id"
+    t.integer "residence_id"
+    t.integer "blood_type_id"
     t.date "birth_date"
     t.integer "age"
     t.string "profession"
     t.string "hobby"
     t.string "nickname"
     t.string "text"
-    t.string "gender"
-    t.bigint "category_id"
+    t.integer "gender_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
