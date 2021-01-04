@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   before_action :search_user, only: [:index, :search]
-  
+  before_action :set_user_column, only: [:index]
+
   def index
     @users = User.all.order("created_at DESC")
-    set_user_column
   end
 
   # def new

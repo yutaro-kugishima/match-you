@@ -5,7 +5,7 @@
 <h2>
 項目を選択して検索
 </h2>
-  <%= search_form_for @p, url: users_search_path do |f| %>
+  <%= search_form_for @p, url: user_users_search_path(:user_id) do |f| %>
     <%# <%= f.label :gender, '性別' %>
     <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]} %>
     <%# 指定なし %>
