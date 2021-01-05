@@ -2,9 +2,9 @@
   <%# <%= form.submit "検索", class: "search-btn" %>
 <%# <% end %> 
 <div class="contents row">
-<h2>
-項目を選択して検索
-</h2>
+<h1>
+項目を選択して検索してみましょう！
+</h1>
   <%= search_form_for @p, url: users_search_path do |f| %>
     <%# <%= f.label :gender, '性別' %>
     <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]} %>
@@ -18,15 +18,19 @@
     <%# <%= f.label :age, '年齢' %>
     <%# <%= f.radio_button :age_lteq, '' %>
     <%# 指定なし %>
-    <%= f.label :age_gt %>
+
+    <%# <%= f.search_field :name_cont%> %>
+
+    <%= f.label :age_gt（○歳以上） %>
     <%= f.search_field :age_gt %>
 
-    <%= f.label :age_lt %>
+    <%= f.label :age_lt（○歳以下） %>
     <%= f.search_field :age_lt %>
     <br>
 
+    <%# <%= f.search_field :name_cont %> %>
     <%= f.label :birth_place, '出身地' %>
-    <%= f.collection_select :birth_place_id, @user_birth_place_id, :birth_place_id, :birth_place_id,  include_blank: '指定なし' %>
+    <%# <%= f.collection_select :birth_place_id_eq, User.all, :id, :name,  include_blank: '指定なし' %> %>
     <br>
 
     <%= f.label :residence, '居住地' %>
@@ -48,7 +52,7 @@
     <%= f.submit '検索' %>
   <% end %>
 
-  <% @users.each do |user| %>
-    <%= render partial: "user", locals: { user: user } %>
-  <% end %>
+  <%# <% @users.each do |user| %>
+    <%# <%= render partial: "user", locals: { user: user } %>
+  <%# <% end %>
 </div>

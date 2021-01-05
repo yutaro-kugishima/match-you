@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
   before_action :search_user, only: [:index, :search]
-  
+
   def index
+    @user = current_user
     @users = User.all.order("created_at DESC")
     set_user_column
   end
@@ -32,7 +33,8 @@ class UsersController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:user)  # 検索条件にマッチした商品の情報を取得
+    @results = @p.result  # 検索条件にマッチした商品の情報を取得
+    # bindings.pry
   end
 
   private
