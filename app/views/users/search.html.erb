@@ -1,6 +1,11 @@
 <h1>
   検索結果
 </h1>
+
+<%= search_form_for @p, url: users_search_path do |f| %>
+  <%= f.label '' %>
+  <%= f.collection_select :category_id_eq, Category.all, :id, :name %>
+
 <%# 検索結果の個数で条件分岐 %>
 <% if @results.length !=0 %>
   <% @results.each do |result| %>
@@ -12,12 +17,13 @@
       <%= result.gender %>
       <%= result.age %>
       <%= result.birth_place %>
-      <%= result.residence.name %>
+      <%= result.residence %>
       <%= result.blood_type %>
     </li>
   <% end %>
 <% else %>
   該当する人はいません
 <% end %>
+<% end %> 
 <br>
 <%= link_to 'トップページへ戻る', root_path %>

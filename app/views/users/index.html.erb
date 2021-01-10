@@ -3,9 +3,8 @@
 <%# <% end %> 
 <div class="contents row">
 <h1>
-項目を選択して検索してみましょう！
+プロフィールを登録して、自分に合いそうな人を検索してみましょう！
 </h1>
-  <%= search_form_for @p, url: users_search_path do |f| %>
     <%# <%= f.label :gender, '性別' %>
     <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]} %>
     <%# 指定なし %>
@@ -13,13 +12,13 @@
     <%# 男 %>
     <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]}, '2' %>
     <%# 女 %>
-    <br>
 
     <%# <%= f.label :age, '年齢' %>
     <%# <%= f.radio_button :age_lteq, '' %>
     <%# 指定なし %>
 
-    <%# <%= f.search_field :name_cont%> %>
+  <%= search_form_for @p, url: users_search_path do |f| %>
+    <%# <%= f.search_field :name_cont %> 
 
     <%= f.label :age_gt（○歳以上） %>
     <%= f.search_field :age_gt %>
@@ -28,27 +27,22 @@
     <%= f.search_field :age_lt %>
     <br>
 
-    <%# <%= f.search_field :name_cont %> %>
+    <%= f.label :gender, '性別' %>
+    <%= f.collection_select :gender_id, Gender.all, :id, :name, {} %>
+    <br>
+
     <%= f.label :birth_place, '出身地' %>
-    <%# <%= f.collection_select :birth_place_id_eq, User.all, :id, :name,  include_blank: '指定なし' %> %>
+    <%= f.collection_select :birth_place_id, BirthPlace.all, :id, :name, {} %>
     <br>
 
     <%= f.label :residence, '居住地' %>
-    <%= f.collection_select :residence_id, @user_residence_id, :residence_id, :residence_id,  include_blank: '指定なし' %>
+    <%= f.collection_select :residence_id, Residence.all, :id, :name, {} %>
     <br>
 
-    <%# <%= f.label :blood_type, '血液型' %>
-    <%# <%= f.radio_button :blood_type_lteq, '' %> 
-    <%# 指定なし %>
-    <%# <%= f.radio_button :blood_type_eq, '1' %>
-    <%# A %>
-    <%# <%= f.radio_button :blood_type_eq, '2' %>
-    <%# B %>
-    <%# <%= f.radio_button :blood_type_eq, '3' %>
-    <%# O %>
-    <%# <%= f.radio_button :blood_type_eq, '4' %>
-    <%# AB %>
-    <%# <br> %>
+    <%= f.label :blood_type, '血液型' %>
+    <%= f.collection_select :blood_type_id, BloodType.all, :id, :name, {} %>
+    <br>
+    
     <%= f.submit '検索' %>
   <% end %>
 
