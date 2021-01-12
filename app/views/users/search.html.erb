@@ -4,7 +4,7 @@
 
 <%= search_form_for @p, url: users_search_path do |f| %>
   <%= f.label '' %>
-  <%= f.collection_select :category_id_eq, Category.all, :id, :name %>
+  <%# <%= f.collection_select :category_id, Category.all, :id, :name %>
 
 <%# 検索結果の個数で条件分岐 %>
 <% if @results.length !=0 %>

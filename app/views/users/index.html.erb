@@ -20,12 +20,12 @@
   <%= search_form_for @p, url: users_search_path do |f| %>
     <%# <%= f.search_field :name_cont %> 
 
-    <%= f.label :age_gt（○歳以上） %>
-    <%= f.search_field :age_gt %>
+    <%# <%= f.label :age_gt（○歳以上） %>
+    <%# <%= f.search_field :age_gt %>
 
-    <%= f.label :age_lt（○歳以下） %>
-    <%= f.search_field :age_lt %>
-    <br>
+    <%# <%= f.label :age_lt（○歳以下） %> 
+    <%# <%= f.search_field :age_lt %> 
+    <%# <br> %>
 
     <%= f.label :gender, '性別' %>
     <%= f.collection_select :gender_id, Gender.all, :id, :name, {} %>
