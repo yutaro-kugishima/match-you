@@ -1,10 +1,8 @@
-<%# <%= form_with(url: user_users_search_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%# <%= form.submit "検索", class: "search-btn" %>
-<%# <% end %> 
 <div class="contents row">
-<h1>
-プロフィールを登録して、自分に合いそうな人を検索してみましょう！
-</h1>
+<h2>つながりを、もっと身近に</h2>
+<span>プロフィールを登録して検索するだけで簡単に他のユーザーを探すことができるフレンドマッチングアプリサービス</span>
+ <%= link_to image_tag("undraw_Add_friends_wa2a.png", class:"undraw-img"), "#" %>
+
     <%# <%= f.label :gender, '性別' %>
     <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]} %>
     <%# 指定なし %>
@@ -49,4 +47,19 @@
   <%# <% @users.each do |user| %>
     <%# <%= render partial: "user", locals: { user: user } %>
   <%# <% end %>
+
+
+<h2>まずはプロフィールを登録</h2>
+<span>最初にプロフィールを登録して、他のユーザーに知ってもらいます。直近で登録した3名は、「最近登録したユーザー」として表示されます。
+</span>
+ <%= link_to image_tag("undraw_profile_6l1l.png", class:"undraw-img"), "#" %>
+
+<h2>気になる人には、いいね！で意思表示</h2>
+<span>自分と共通点が見つかって相手に好意を伝えたい時に、いいね！を押します</span>
+ <%= link_to image_tag("undraw_Social_life_re_x7t5.png", class:"undraw-img"), "#" %>
+
+<h2>マッチングした後はチャットで交流</h2>
+<span>相手からもいいね！をもらえたら、マッチング成立です。チャットで親睦を深められます</span>
+ <%= link_to image_tag("undraw_Chatting_re_j55r.png", class:"undraw-img"), "#" %>
+
 </div>
