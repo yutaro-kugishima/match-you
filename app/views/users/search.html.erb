@@ -12,13 +12,13 @@
     <td>
     <br>
     <li>
-      <%= result.picture %>
+      <%= image_tag result.picture %>
       <%= result.nickname %>
-      <%= result.gender %>
+      <%= result.gender.name %>
       <%= result.age %>
-      <%= result.birth_place %>
-      <%= result.residence %>
-      <%= result.blood_type %>
+      <%= result.birth_place.name %>
+      <%= result.residence.name %>
+      <%= result.blood_type.name %>
     </li>
   <% end %>
 <% else %>

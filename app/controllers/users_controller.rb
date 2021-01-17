@@ -34,7 +34,6 @@ class UsersController < ApplicationController
 
   def search
     @results = @p.result  # 検索条件にマッチした商品の情報を取得
-    # bindings.pry
   end
 
   private
