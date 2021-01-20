@@ -2,10 +2,6 @@
   検索結果
 </h1>
 
-<%= search_form_for @p, url: users_search_path do |f| %>
-  <%= f.label '' %>
-  <%# <%= f.collection_select :category_id, Category.all, :id, :name %>
-
 <%# 検索結果の個数で条件分岐 %>
 <% if @results.length !=0 %>
   <% @results.each do |result| %>
@@ -20,12 +16,10 @@
       <%= result.residence.name %>
       <%= result.blood_type.name %>
     </li>
-    <%# <span><%= image_tag 'arrow_top.png' %></span> 
       <%= link_to '詳細プロフィールを見る', user_path(result.id), method: :get %>
   <% end %>
 <% else %>
   該当する人はいません
 <% end %>
-<% end %> 
 <br>
 <%= link_to 'トップページへ戻る', root_path %>

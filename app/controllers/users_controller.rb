@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :search_user, only: [:index, :search]
 
   def index
+    # binding.pry
+    # cookies.signed[:user_id]=current_user.id
     @user = current_user
     @users = User.all.order("created_at DESC")
     set_user_column
@@ -34,7 +36,12 @@ class UsersController < ApplicationController
   end
 
   def search_user
-    @p = User.ransack(params[:q])  # 検索オブジェクトを生成
+    @p = User.ransack(params[:q]) 
+    # if params[:q] == nil
+    #   @p = nil
+    # else
+      # @p = User.ransack(params[:q])  # 検索オブジェクトを生成
+    # end
   end
 
   def set_user_column
