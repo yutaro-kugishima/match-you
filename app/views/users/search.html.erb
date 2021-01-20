@@ -12,7 +12,7 @@
     <td>
     <br>
     <li>
-      <%= image_tag result.picture %>
+      <%= image_tag result.picture, class:"user-picture" %>
       <%= result.nickname %>
       <%= result.gender.name %>
       <%= result.age %>
@@ -20,6 +20,8 @@
       <%= result.residence.name %>
       <%= result.blood_type.name %>
     </li>
+    <%# <span><%= image_tag 'arrow_top.png' %></span> 
+      <%= link_to '詳細プロフィールを見る', user_path(result.id), method: :get %>
   <% end %>
 <% else %>
   該当する人はいません
