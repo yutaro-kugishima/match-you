@@ -8,23 +8,13 @@ class UsersController < ApplicationController
     set_user_column
   end
 
-  # def new
-  #   @messages = Message.all
-  #   @message = Message.new
-  # end
-
   def create
-    User.create(user_params)
-    @messages = Message.all
-    # @message = Message.new
-    @message = Message.new(text: params[:message][:text])
+    user = User.create(user_params)
+    cookies.permanent.signed[:user_id] = user.id
   end
   
   def show
     @user = User.find(params[:id])
-    # binding.pry
-    # @comment = Comment.new
-    # @comments = @user.comments.includes(:user)
   end
 
   def destroy
