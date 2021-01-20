@@ -1,66 +1,70 @@
 <div class="contents">
-<h1>MatchYou</h1>
-<h2>つながりを、もっと身近に</h2>
-<span>プロフィールを登録して検索するだけで簡単に他のユーザーを探すことができるフレンドマッチングアプリサービス</span>
- <%= link_to image_tag("undraw_Add_friends_wa2a.png", class:"undraw-img"), "#" %>
+  <div class="content1">
+    <h1 class="class1">MatchYou</h1>
+    <div class="wrapper">
+      <span class="introduction">〜つながりを、もっと身近に〜<br><br><br><br>プロフィールを登録して検索するだけで<br><br>簡単に他のユーザーを探すことができる<br><br>フレンドマッチングアプリサービス</span>
+      <%= link_to image_tag("undraw_Add_friends_wa2a.png", class:"undraw-img1"), "#" %>
+    </div>
+  </div>
 
-    <%# <%= f.label :gender, '性別' %>
-    <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]} %>
-    <%# 指定なし %>
-    <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]} %>
-    <%# 男 %>
-    <%# <%= f.radio_button :gender_eq, Gender.all.map{|st| [st.name, st.id]}, '2' %>
-    <%# 女 %>
+  <div class="content2">
+    <div class="content2-1">
+      <h2>まずはプロフィールを登録</h2>
+        <div class="wrapper">
+          <%= link_to image_tag("undraw_profile_6l1l.png", class:"undraw-img2"), "#" %>
+        <span class="box1"><br>最初にプロフィールを登録して、<br><br>他のユーザーに知ってもらいます。<br><br>直近で登録した3名は「最近登録したユーザー」<br><br>として表示されます。</span>
+      </div>
+    </div>
 
-    <%# <%= f.label :age, '年齢' %>
-    <%# <%= f.radio_button :age_lteq, '' %>
-    <%# 指定なし %>
+    <div class="content2-2">
+      <h2>気になる人には、いいね！で意思表示</h2>
+        <div class="wrapper">
+        <span class="box1"><br>検索で見つけた相手に好意を伝えたい時に<br><br>いいね！を押します。</span>
+        <%= link_to image_tag("undraw_Social_life_re_x7t5.png", class:"undraw-img3"), "#" %>
+        </div>
+    </div>
 
-  <%= search_form_for @p, url: users_search_path do |f| %>
-    <%# <%= f.search_field :name_cont %> 
+    <div class="content2-3">
+      <h2>マッチングした後はチャットで交流</h2>
+        <div class="wrapper">
+        <%= link_to image_tag("undraw_Chatting_re_j55r.png", class:"undraw-img2"), "#" %>
+        <span class="box1"><br>相手からもいいね！をもらえたらマッチング成立です。<br><br>チャットで親睦を深めることができます。</span>
+        </div>
+    </div>
+  </div>
 
-    <%# <%= f.label :age_gt（○歳以上） %>
-    <%# <%= f.search_field :age_gt %>
+    <div class="content3">
+      <%= search_form_for @p, url: users_search_path do |f| %>
+        <br><h2>プロフィールの登録が完了したら検索してみましょう！</h2><br>
 
-    <%# <%= f.label :age_lt（○歳以下） %> 
-    <%# <%= f.search_field :age_lt %> 
-    <%# <br> %>
+        <div class="searches">
+          <div class="search">
+            <%= f.label :gender, '性別' %>
+            <%= f.collection_select :gender_id_cont, Gender.all, :id, :name, {} %><br>
+          </div>
 
-    <%= f.label :gender, '性別' %>
-    <%= f.collection_select :gender_id, Gender.all, :id, :name, {} %>
-    <br>
+          <div class="search">
+            <%= f.label :birth_place, '出身地' %>
+            <%= f.collection_select :birth_place_id_cont, BirthPlace.all, :id, :name, {} %><br>
+          </div>
 
-    <%= f.label :birth_place, '出身地' %>
-    <%= f.collection_select :birth_place_id, BirthPlace.all, :id, :name, {} %>
-    <br>
+          <div class="search">
+            <%= f.label :residence, '居住地' %>
+            <%= f.collection_select :residence_id_cont, Residence.all, :id, :name, {} %><br>
+          </div>
 
-    <%= f.label :residence, '居住地' %>
-    <%= f.collection_select :residence_id, Residence.all, :id, :name, {} %>
-    <br>
+          <div class="search">
+            <%= f.label :blood_type, '血液型' %>
+            <%= f.collection_select :blood_type_id_cont, BloodType.all, :id, :name, {} %><br>
+          </div>
+        </div>
 
-    <%= f.label :blood_type, '血液型' %>
-    <%= f.collection_select :blood_type_id, BloodType.all, :id, :name, {} %>
-    <br>
-    
-    <%= f.submit '検索' %>
-  <% end %>
-
+        <div class="search-btn">
+          <br><%= f.submit '検索' %>
+        </div>
+      <% end %>
+    </div>
   <%# <% @users.each do |user| %>
     <%# <%= render partial: "user", locals: { user: user } %>
   <%# <% end %>
-
-
-<h2>まずはプロフィールを登録</h2>
-<span>最初にプロフィールを登録して、他のユーザーに知ってもらいます。直近で登録した3名は、「最近登録したユーザー」として表示されます。
-</span>
- <%= link_to image_tag("undraw_profile_6l1l.png", class:"undraw-img"), "#" %>
-
-<h2>気になる人には、いいね！で意思表示</h2>
-<span>自分と共通点が見つかって相手に好意を伝えたい時に、いいね！を押します。</span>
- <%= link_to image_tag("undraw_Social_life_re_x7t5.png", class:"undraw-img"), "#" %>
-
-<h2>マッチングした後はチャットで交流</h2>
-<span>相手からも、いいね！をもらえたらマッチング成立です。チャットで親睦を深めることができます。</span>
- <%= link_to image_tag("undraw_Chatting_re_j55r.png", class:"undraw-img"), "#" %>
-
 </div>

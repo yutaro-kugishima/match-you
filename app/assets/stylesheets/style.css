@@ -648,7 +648,7 @@ ul li {
 body,
 html {
   height: 100%;
-  background-color: #f5f5f3;
+  background-color: #caf0fc;
 }
 
 body {
@@ -720,8 +720,8 @@ form input[type="submit"] {
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
   font-size: 14px;
-  border: 2px solid #57c3e9;
-  color: #57c3e9;
+  border: 2px solid;
+  /* color: #57c3e9; */
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -1210,4 +1210,79 @@ footer p {
 #send-form {
   text-align: center;
   margin-bottom: 200px;
+}
+
+.contents {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.content1 {
+  background-color: #ffffff;
+  /* width: 1000px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.content2 {
+  background-color: #ffffff;
+}
+
+div.content3 {
+  background-color: #c2e1fc;
+}
+
+div.contents .class1 {
+  color: #8bcff7;
+  font-size: 100px;
+  font-family: "Snell Roundhand", sans-serif;
+}
+
+.contents.content2 {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  display: flex;
+}
+
+div.wrapper .introduction {
+  font-weight: bold;
+}
+div.wrapper .undraw-img1 {
+  width: 450px;
+  height: 450px;
+}
+div.wrapper .undraw-img2 {
+  width: 250px;
+  height: 250px;
+}
+div.wrapper .undraw-img3 {
+  width: 250px;
+  height: 250px;
+}
+
+div.contents div.searches {
+  display: flex;
+  justify-content: space-between;
+}
+div.contents div.search {
+  width: 100px;
+}
+
+div.contents div.search-btn {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header.header {
+  background-color: #53b6fc;
+}
+
+footer {
+  background-color: #53b6fc;
 }
