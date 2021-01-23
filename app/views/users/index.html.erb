@@ -40,22 +40,22 @@
         <div class="searches">
           <div class="search">
             <%= f.label :gender, '性別' %>
-            <%= f.collection_select :gender_id_cont, Gender.all, :id, :name, {} %><br>
+            <%= f.collection_select :gender_id, Gender.all, :id, :name, {} %><br>
           </div>
 
           <div class="search">
             <%= f.label :birth_place, '出身地' %>
-            <%= f.collection_select :birth_place_id_cont, BirthPlace.all, :id, :name, {} %><br>
+            <%= f.collection_select :birth_place_id, BirthPlace.all, :id, :name, {} %><br>
           </div>
 
           <div class="search">
             <%= f.label :residence, '居住地' %>
-            <%= f.collection_select :residence_id_cont, Residence.all, :id, :name, {} %><br>
+            <%= f.collection_select :residence_id, Residence.all, :id, :name, {} %><br>
           </div>
 
           <div class="search">
             <%= f.label :blood_type, '血液型' %>
-            <%= f.collection_select :blood_type_id_cont, BloodType.all, :id, :name, {} %><br>
+            <%= f.collection_select :blood_type_id, BloodType.all, :id, :name, {} %><br>
           </div>
         </div>
 
