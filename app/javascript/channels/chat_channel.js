@@ -1,4 +1,6 @@
-import consumer from "./consumer"
+import consumer from "./consumer";
+
+console.log(consumer);
 
 consumer.subscriptions.create("ChatChannel", {
   connected() {
@@ -13,7 +15,7 @@ consumer.subscriptions.create("ChatChannel", {
     // Called when there's incoming data on the websocket for this channel
   },
 
-  speak: function() {
-    return this.perform('speak');
-  }
+  speak: function () {
+    return this.perform("speak");
+  },
 });
