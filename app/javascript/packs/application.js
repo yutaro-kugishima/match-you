@@ -18,6 +18,6 @@ require("channels");
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery #追記
-//= require jquery_ujs #追記
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
