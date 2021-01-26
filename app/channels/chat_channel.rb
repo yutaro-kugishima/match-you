@@ -1,6 +1,6 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    stream_from "chat_channel"
     current_user.speak
   end
 
@@ -10,8 +10,6 @@ class ChatChannel < ApplicationCable::Channel
 
   def speak(data)
     binding.pry
-    current_user.speak(on: data['current_user_id'])
-    # binding.pry
     if data["sentence"]
       Chat.create!(
         user_id: data["current_user_id"].to_i,
@@ -23,7 +21,6 @@ class ChatChannel < ApplicationCable::Channel
         sentence: data["sentence"],
         partner_id: data["partner_id"],
         isCurrent_user: true
-
       #画面を開いているのがチャット受信者だった場合
       ChatChannel.broadcast_to data["partner_id"].to_i,
         sentence: data["sentence"],
