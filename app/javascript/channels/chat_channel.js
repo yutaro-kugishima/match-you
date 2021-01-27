@@ -14,18 +14,19 @@ const hoge = consumer.subscriptions.create("ChatChannel", {
   },
 
   received: function (data) {
+    alert(data);
     //画面を開いているのがチャット送信者だった場合
-    if (data["isCurrent_user"] == true) {
-      sentence = `<div class='mycomment'><p>${data["sentence"]}</p></div>`;
-    }
-    //画面を開いているのがチャット受信者だった場合
-    else {
-      sentence = `<div class='fukidasi'><div class='faceicon'>
-      <img src='/assets/profile.png' alt='管理人'></div>
-      <div class='chatting'><div class='says'><p>${data["sentence"]}</p>
-      </div></div></div>`;
-    }
-    $("#chats").append(sentence);
+    // if (data["isCurrent_user"] == true) {
+    //   sentence = `<div class='mycomment'><p>${data["sentence"]}</p></div>`;
+    // }
+    // //画面を開いているのがチャット受信者だった場合
+    // else {
+    //   sentence = `<div class='fukidasi'><div class='faceicon'>
+    //   <img src='/assets/profile.png' alt='管理人'></div>
+    //   <div class='chatting'><div class='says'><p>${data["sentence"]}</p>
+    //   </div></div></div>`;
+    // }
+    // $("#chats").append(sentence);
   },
 
   speak: function (sentence) {
@@ -42,8 +43,7 @@ window.onload = function () {
   document.getElementById("send").onclick = function (e) {
     const sentence = document.getElementById("sentence").value;
     hoge.speak(sentence);
-    $("#sentence").val(""); //フォームを空に
+    // $("#sentence").val(""); //フォームを空に
     e.preventDefault();
-    s;
   };
 };
