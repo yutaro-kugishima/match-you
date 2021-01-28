@@ -1,7 +1,7 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     stream_from "chat_channel"
-    current_user.speak
+    # current_user.speak
   end
 
   def unsubscribed
@@ -9,22 +9,23 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    binding.pry
-    if data["sentence"]
-      Chat.create!(
-        user_id: data["current_user_id"].to_i,
-        partner_id: data["partner_id"].to_i ,
-        sentence: data["sentence"]
-      )
-      #画面を開いているのがチャット送信者だった場合
-      ChatChannel.broadcast_to data["current_user_id"].to_i,
-        sentence: data["sentence"],
-        partner_id: data["partner_id"],
-        isCurrent_user: true
-      #画面を開いているのがチャット受信者だった場合
-      ChatChannel.broadcast_to data["partner_id"].to_i,
-        sentence: data["sentence"],
-        partner_id: data["partner_id"],
-        isCurrent_user: false
+    ActionCable.server.broadcast 'chat_channel', chat: data['chat']
+
+    # if data["sentence"]
+    #   Chat.create!(
+    #     user_id: data["current_user_id"].to_i,
+    #     partner_id: data["partner_id"].to_i ,
+    #     sentence: data["sentence"]
+    #   )
+    #   #画面を開いているのがチャット送信者だった場合
+    #   ChatChannel.broadcast_to data["current_user_id"].to_i,
+    #     sentence: data["sentence"],
+    #     partner_id: data["partner_id"],
+    #     isCurrent_user: true
+    #   #画面を開いているのがチャット受信者だった場合
+    #   ChatChannel.broadcast_to data["partner_id"].to_i,
+    #     sentence: data["sentence"],
+    #     partner_id: data["partner_id"],
+    #     isCurrent_user: false
   end
 end

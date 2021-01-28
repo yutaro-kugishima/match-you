@@ -30,6 +30,7 @@ const hoge = consumer.subscriptions.create("ChatChannel", {
   },
 
   speak: function (sentence) {
+    debugger;
     const current_user_id = document.getElementById("current_user_id").value;
     const partner_id = document.getElementById("partner_id").value;
     this.perform("speak", {
@@ -40,6 +41,7 @@ const hoge = consumer.subscriptions.create("ChatChannel", {
   },
 });
 window.onload = function () {
+  debugger;
   document.getElementById("send").onclick = function (e) {
     const sentence = document.getElementById("sentence").value;
     hoge.speak(sentence);
