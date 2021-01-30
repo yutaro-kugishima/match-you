@@ -9,7 +9,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Chat.create!(sentence: data['chat'], user_id: 3, partner_id: 4)
+    Chat.create!(sentence: data['chat'], user_id: data['current_user_id'], partner_id: data['partner_id'])
     # if data["sentence"]
     #   Chat.create!(
     #     user_id: data["current_user_id"].to_i,

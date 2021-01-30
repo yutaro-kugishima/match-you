@@ -32,13 +32,11 @@ const appRoom = consumer.subscriptions.create("ChatChannel", {
     // $("#chats").append(sentence);
   },
 
-  speak: function (chat) {
-    return this.perform('speak', {chat: chat});
+  speak: function (chat,current_user_id,partner_id) {
+    return this.perform('speak', {chat: chat,current_user_id: current_user_id,partner_id: partner_id});
   }
 });
 //     debugger;
-//     const current_user_id = document.getElementById("current_user_id").value;
-//     const partner_id = document.getElementById("partner_id").value;
 //     this.perform("speak", {
 //       sentence: sentence,
 //       current_user_id: current_user_id,
@@ -57,7 +55,11 @@ const appRoom = consumer.subscriptions.create("ChatChannel", {
 
 window.addEventListener("keypress", function(e) {
   if (e.keyCode === 13) {
-    appRoom.speak(e.target.value);
+    const current_user_id = document.getElementById("current_user_id").value;
+    console.log(current_user_id)
+    const partner_id = document.getElementById("partner_id").value;
+    console.log(partner_id)
+    appRoom.speak(e.target.value,current_user_id,partner_id);
     e.target.value = '';
     e.preventDefault();
   }

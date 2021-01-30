@@ -26,12 +26,6 @@
 <form>
   <label>Say something:</label><br>
   <input type="text" data-behavior="chat_speaker">
+  <input id="current_user_id" type="hidden" value= "<%=current_user.id%>">
+  <input id="partner_id" type="hidden" value= "<%=@partner.id%>">
 </form>
-<%# 
-<form id="send-form">
-  <input type="text" id="sentence" placeholder="入力してね" style="width:30%;">
-  <%# <input type="text" id="sentence" value="" placeholder="入力してね" style="width:30%;"> %>
-  <%# <input type="submit" value="送信" id="send"> %>
-  <%# <input id="current_user_id" type="hidden" value= "<%=current_user.id%>"> %>
-  <%# <input id="partner_id" type="hidden" value= "<%=@partner.id%>"> %>
-<%# </form> %> %>
