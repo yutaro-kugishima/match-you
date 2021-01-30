@@ -1,11 +1,11 @@
 import consumer from "./consumer";
 
-const hoge = consumer.subscriptions.create("ChatChannel", {
+const appRoom = consumer.subscriptions.create("ChatChannel", {
   initialized() {
-    console.log("hello1");
+    // console.log("hello1");
   },
   connected() {
-    console.log("hello");
+    // console.log("hello");
     // Called when the subscription is ready for use on the server
   },
 
@@ -13,8 +13,11 @@ const hoge = consumer.subscriptions.create("ChatChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received: function (data) {
-    alert(data);
+  received(data) {
+    console.log(data)
+    const chats = document.getElementById('chats');
+    console.log(chats)
+    chats.insertAdjacentHTML('beforeend', data['chat']);
     //画面を開いているのがチャット送信者だった場合
     // if (data["isCurrent_user"] == true) {
     //   sentence = `<div class='mycomment'><p>${data["sentence"]}</p></div>`;
@@ -29,23 +32,33 @@ const hoge = consumer.subscriptions.create("ChatChannel", {
     // $("#chats").append(sentence);
   },
 
-  speak: function (sentence) {
-    debugger;
-    const current_user_id = document.getElementById("current_user_id").value;
-    const partner_id = document.getElementById("partner_id").value;
-    this.perform("speak", {
-      sentence: sentence,
-      current_user_id: current_user_id,
-      partner_id: partner_id,
-    });
-  },
+  speak: function (chat) {
+    return this.perform('speak', {chat: chat});
+  }
 });
-window.onload = function () {
-  debugger;
-  document.getElementById("send").onclick = function (e) {
-    const sentence = document.getElementById("sentence").value;
-    hoge.speak(sentence);
-    // $("#sentence").val(""); //フォームを空に
+//     debugger;
+//     const current_user_id = document.getElementById("current_user_id").value;
+//     const partner_id = document.getElementById("partner_id").value;
+//     this.perform("speak", {
+//       sentence: sentence,
+//       current_user_id: current_user_id,
+//       partner_id: partner_id,
+//     });
+//   },
+// });
+// window.onload = function () {
+//   debugger;
+//   document.getElementById("send").onclick = function (e) {
+//     const sentence = document.getElementById("sentence").value;
+//     hoge.speak(sentence);
+//     // $("#sentence").val(""); //フォームを空に
+//     e.preventDefault();
+//   };
+
+window.addEventListener("keypress", function(e) {
+  if (e.keyCode === 13) {
+    appRoom.speak(e.target.value);
+    e.target.value = '';
     e.preventDefault();
-  };
-};
+  }
+})

@@ -9,8 +9,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    ActionCable.server.broadcast 'chat_channel', chat: data['chat']
-
+    Chat.create!(sentence: data['chat'], user_id: 3, partner_id: 4)
     # if data["sentence"]
     #   Chat.create!(
     #     user_id: data["current_user_id"].to_i,
