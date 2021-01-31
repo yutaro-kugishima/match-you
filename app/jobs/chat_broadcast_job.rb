@@ -1,13 +1,13 @@
 class ChatBroadcastJob < ApplicationJob
-  queue_as :default
+  # queue_as :default
 
-  def perform(chat)
-    ActionCable.server.broadcast 'chat_channel', chat: render_chat(chat)
-  end
+  # def perform(chat)
+  #   ActionCable.server.broadcast 'chat_channel', chat: render_chat(chat)
+  # end
 
-  private
+  # private
 
-  def render_chat(chat)
-    ApplicationController.renderer.render(partial: 'chats/chat', locals: { chat: chat })
-  end
+  # def render_chat(chat)
+  #   ApplicationController.renderer.render(partial: 'chats/chat', locals: { chat: chat })
+  # end
 end

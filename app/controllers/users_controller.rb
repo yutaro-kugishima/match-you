@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   before_action :search_user, only: [:index, :search]
 
   def index
-    # binding.pry
-    # cookies.signed[:user_id]=current_user.id
+    cookies.encrypted[:user_id]=current_user.id
     @user = current_user
     @users = User.all.order("created_at DESC")
     set_user_column

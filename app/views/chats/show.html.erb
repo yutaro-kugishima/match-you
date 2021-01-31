@@ -1,28 +1,28 @@
-<%# <h2 style="text-align:center"><%="#{@partner.nickname}さんとのチャット"%></h2> %>
-<%# <div id="chats">
+<h2 style="text-align:center">
+  <%="#{@partner.nickname}さんとのチャット" %>
+</h2>
+<div id="chats">
   <% @chats.each do |chat|%>
-    <%# <%if chat.user_id==user_id%> %>
-      <%# <div class="mycomment"> %>
-        <%# <p><%=chat.sentence%></p> %>
-      <%# </div> %>
-    <%# <%else%> %>
-      <%# <div class="fukidasi"> %>
-        <%# <div class="faceicon"> %>
+    <%if chat.user_id==current_user.id%>
+      <div class="mycomment">
+        <p><%=chat.sentence%></p>
+      </div>
+    <%else%>
+      <div class="fukidasi">
+        <div class="faceicon">
+          <%= image_tag @partner.picture, class:"user-picture" %>
           <%# <img src="/assets/profile.png" alt="相手"> %>
-        <%# </div> %>
-        <%# <div class="chatting"> %>
-          <%# <div class="says"> %>
-            <%# <p><%=chat.sentence%></p>  %>
-        <%# </div> %>
-      <%# </div> %>
-      <%# </div> %>
-    <%# <%end%> %>
-  <%# <%end%> %>
-<%# </div> %> %>
-
-<div id ="chats">
-  <%= render @chats %>
+        </div>
+        <div class="chatting">
+          <div class="says">
+            <p><%=chat.sentence%></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
 </div>
+
 <form>
   <label>Say something:</label><br>
   <input type="text" data-behavior="chat_speaker">
