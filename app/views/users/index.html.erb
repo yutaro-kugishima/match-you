@@ -39,6 +39,19 @@
 
         <div class="searches">
           <div class="search">
+            <%= f.label :age_gteq, '年齢' %>
+            <%= f.radio_button 'age_gteq', '',{:checked => true} %>
+                指定なし
+            <%= f.radio_button 'age_gteq', '15' %> 
+                15歳以上
+            <%= f.radio_button 'age_gteq', '20' %>
+                20歳以上
+            <%= f.radio_button 'age_gteq', '30' %>
+                30歳以上
+            <%= f.radio_button 'age_gteq', '40' %>
+                40歳以上
+          </div>
+          <div class="search">
             <%= f.label :gender_id_eq, '性別' %>
             <%= f.collection_select :gender_id_eq, Gender.all, :id, :name,  include_blank: '---' %><br>
           </div>
