@@ -2,7 +2,7 @@
   <div class="content1">
     <h1 class="class1">MatchYou</h1>
     <div class="wrapper">
-      <span class="introduction">〜つながりを、もっと身近に〜<br><br><br><br>プロフィールを登録して検索するだけで<br><br>簡単に他のユーザーを探すことができる<br><br>フレンドマッチングアプリサービス</span>
+      <span class="introduction">〜つながりを、もっと身近に〜<br><br><br><br>プロフィールを登録して検索するだけで<br><br>簡単に他のユーザーを探すことができる<br><br>フレンドマッチングサービス</span>
       <%= link_to image_tag("undraw_Add_friends_wa2a.png", class:"undraw-img1"), "#" %>
     </div>
   </div>
@@ -39,23 +39,23 @@
 
         <div class="searches">
           <div class="search">
-            <%= f.label :gender, '性別' %>
-            <%= f.collection_select :gender_id, Gender.all, :id, :name, {} %><br>
+            <%= f.label :gender_id_eq, '性別' %>
+            <%= f.collection_select :gender_id_eq, Gender.all, :id, :name,  include_blank: '---' %><br>
           </div>
 
           <div class="search">
-            <%= f.label :birth_place, '出身地' %>
-            <%= f.collection_select :birth_place_id, BirthPlace.all, :id, :name, {} %><br>
+            <%= f.label :birth_place_id_eq, '出身地' %>
+            <%= f.collection_select :birth_place_id_eq, BirthPlace.all, :id, :name,  include_blank: '---' %><br>
           </div>
 
           <div class="search">
-            <%= f.label :residence, '居住地' %>
-            <%= f.collection_select :residence_id, Residence.all, :id, :name, {} %><br>
+            <%= f.label :residence_id_eq, '居住地' %>
+            <%= f.collection_select :residence_id_eq, Residence.all, :id, :name,  include_blank: '---' %><br>
           </div>
 
           <div class="search">
-            <%= f.label :blood_type, '血液型' %>
-            <%= f.collection_select :blood_type_id, BloodType.all, :id, :name, {} %><br>
+            <%= f.label :blood_type_id_eq, '血液型' %>
+            <%= f.collection_select :blood_type_id_eq, BloodType.all, :id, :name,  include_blank: '---' %><br>
           </div>
         </div>
 
