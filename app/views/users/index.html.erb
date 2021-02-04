@@ -39,36 +39,50 @@
 
         <div class="searches">
           <div class="search">
+            <div class="search1">
             <%= f.label :age_gteq, '年齢' %>
-            <%= f.radio_button 'age_gteq', '',{:checked => true} %>
-                指定なし
-            <%= f.radio_button 'age_gteq', '15' %> 
-                15歳以上
-            <%= f.radio_button 'age_gteq', '20' %>
-                20歳以上
-            <%= f.radio_button 'age_gteq', '30' %>
-                30歳以上
-            <%= f.radio_button 'age_gteq', '40' %>
-                40歳以上
+              <div class="search3">
+              <%= f.radio_button 'age_gteq', '',{:checked => true} %>
+                  指定なし
+              </div>
+              <div class="search3">
+              <%= f.radio_button 'age_gteq', '15' %> 
+                  15歳以上
+              </div>
+              <div class="search3">
+              <%= f.radio_button 'age_gteq', '20' %>
+                  20歳以上
+            </div>
+              <div class="search3">
+              <%= f.radio_button 'age_gteq', '30' %>
+                  30歳以上
+              </div>
+              <div class="search3">
+              <%= f.radio_button 'age_gteq', '40' %>
+                  40歳以上
+              </div>
+            </div>
           </div>
-          <div class="search">
-            <%= f.label :gender_id_eq, '性別' %>
-            <%= f.collection_select :gender_id_eq, Gender.all, :id, :name,  include_blank: '---' %><br>
-          </div>
+          <div class="search2">
+            <div class="search">
+              <%= f.label :gender_id_eq, '性別' %>
+              <%= f.collection_select :gender_id_eq, Gender.all, :id, :name,  include_blank: '---' %><br>
+            </div>
 
-          <div class="search">
-            <%= f.label :birth_place_id_eq, '出身地' %>
-            <%= f.collection_select :birth_place_id_eq, BirthPlace.all, :id, :name,  include_blank: '---' %><br>
-          </div>
+            <div class="search">
+              <%= f.label :birth_place_id_eq, '出身地' %>
+              <%= f.collection_select :birth_place_id_eq, BirthPlace.all, :id, :name,  include_blank: '---' %><br>
+            </div>
 
-          <div class="search">
-            <%= f.label :residence_id_eq, '居住地' %>
-            <%= f.collection_select :residence_id_eq, Residence.all, :id, :name,  include_blank: '---' %><br>
-          </div>
+            <div class="search">
+              <%= f.label :residence_id_eq, '居住地' %>
+              <%= f.collection_select :residence_id_eq, Residence.all, :id, :name,  include_blank: '---' %><br>
+            </div>
 
-          <div class="search">
-            <%= f.label :blood_type_id_eq, '血液型' %>
-            <%= f.collection_select :blood_type_id_eq, BloodType.all, :id, :name,  include_blank: '---' %><br>
+            <div class="search">
+              <%= f.label :blood_type_id_eq, '血液型' %>
+              <%= f.collection_select :blood_type_id_eq, BloodType.all, :id, :name,  include_blank: '---' %><br>
+            </div>
           </div>
         </div>
 
