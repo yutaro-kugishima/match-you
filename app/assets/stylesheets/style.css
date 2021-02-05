@@ -1265,13 +1265,19 @@ div.wrapper .undraw-img3 {
   height: 250px;
 }
 
-div.contents div.searches {
+div.contents div.search1 {
   display: flex;
   justify-content: space-between;
 }
-div.contents div.search {
-  width: 100px;
+
+div.contents div.search2 {
+  display: flex;
+  justify-content: space-between;
 }
+
+/* div.contents div.search {
+  width: 100px;
+} */
 
 div.contents div.search-btn {
   width: 100px;
