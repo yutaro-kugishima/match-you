@@ -1223,14 +1223,17 @@ div.content1 {
   /* width: 1000px; */
   margin-left: auto;
   margin-right: auto;
+  padding: 0px 0px 0px 30px;
 }
 
 div.content2 {
   background-color: #ffffff;
+  padding: 0px 0px 0px 30px;
 }
 
 div.content3 {
   background-color: #c2e1fc;
+  padding: 0px 0px 0px 30px;
 }
 
 div.contents .class1 {
@@ -1273,11 +1276,8 @@ div.contents div.search1 {
 div.contents div.search2 {
   display: flex;
   justify-content: space-between;
+  margin: 0px 30px 0px 0px;
 }
-
-/* div.contents div.search {
-  width: 100px;
-} */
 
 div.contents div.search-btn {
   width: 100px;
