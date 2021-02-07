@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     cookies.encrypted[:user_id]=current_user.id if user_signed_in?
-    
+
     @user = current_user
     @users = User.all.order("created_at DESC")
     set_user_column
@@ -38,15 +38,13 @@ class UsersController < ApplicationController
   def search_user
     if params[:q] == nil
       @p = nil
-      @p = User.ransack(params[:q])
+      @p = User.ransack(params[:q]).permit(:picture)
     else
-      # binding.pry
       params[:q][:gender_id_cont] = '' if params[:q][:gender_id_cont] == '0'
       params[:q][:birth_place_id_cont] = '' if params[:q][:birth_place_id_cont] == '0'
       params[:q][:residence_id_cont] = '' if params[:q][:residence_id_cont] == '0'
       params[:q][:blood_type_id_cont] = '' if params[:q][:blood_type_id_cont] == '0'
-      # binding.pry
-      @p = User.ransack(params[:q])  # 検索オブジェクトを生成
+      @p = User.ransack(params[:q]).permit(:picture)  # 検索オブジェクトを生成
     end
   end
 
