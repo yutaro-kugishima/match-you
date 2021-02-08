@@ -38,13 +38,13 @@ class UsersController < ApplicationController
   def search_user
     if params[:q] == nil
       @p = nil
-      @p = User.ransack(params[:q]).permit(:picture)
+      @p = User.ransack(params[:q])
     else
       params[:q][:gender_id_cont] = '' if params[:q][:gender_id_cont] == '0'
       params[:q][:birth_place_id_cont] = '' if params[:q][:birth_place_id_cont] == '0'
       params[:q][:residence_id_cont] = '' if params[:q][:residence_id_cont] == '0'
       params[:q][:blood_type_id_cont] = '' if params[:q][:blood_type_id_cont] == '0'
-      @p = User.ransack(params[:q]).permit(:picture)  # 検索オブジェクトを生成
+      @p = User.ransack(params[:q]) # 検索オブジェクトを生成
     end
   end
 
