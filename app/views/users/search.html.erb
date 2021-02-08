@@ -8,13 +8,15 @@
     <td>
     <br>
     <li>
-      <%= image_tag result.picture, class:"user-picture" %>
-      <%= result.nickname %>
-      <%= result.gender.name %>
-      <%= result.age %>
-      <%= result.birth_place.name %>
-      <%= result.residence.name %>
-      <%= result.blood_type.name %>
+      <% if result.picture.attached? %>
+        <%= image_tag result.picture, class:"user-picture" %>
+      <% end %>
+        <%= result.nickname %>
+        <%= result.gender.name %>
+        <%= result.age %>
+        <%= result.birth_place.name %>
+        <%= result.residence.name %>
+        <%= result.blood_type.name %>
     </li>
       <%= link_to '詳細プロフィールを見る', user_path(result.id), method: :get %>
   <% end %>
